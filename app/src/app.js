@@ -104,10 +104,11 @@ const songs = [
         image: "",
     },
     {
-        name: "Nostalgia",
+        name: "Nostalgia", 
         artist: "Joe Hisaishi, Orchestra Città di Ferrara",
         album: "NOSTALGIA~PIANO STORIES II~",
         length: "3:33",
         image: "",
     },
 ];
+
