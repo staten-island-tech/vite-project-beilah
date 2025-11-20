@@ -112,4 +112,16 @@ const songs = [
     },
 ];
 
-console.log('text');
+const container = document.querySelector(".container");
+
+songs.forEach((song) => {
+  const html = `
+        <div class="card" data-name='${song.name}' >
+          <h2 class="cardHeader">${song.name}</h2>
+          <img class="img" src=${song.image}/>
+        </div>
+        `;
+  container.innerHTML += html;
+});
+
+console.log('hailey succs')
