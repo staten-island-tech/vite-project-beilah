@@ -17,6 +17,8 @@ html,
   font-style: italic;
   background-color:rgb(235, 235, 235);
   border-color: transparent;
+  margin: 20px;
+  padding: 10px;
 }
 
 #viewBtn:hover,
@@ -25,3 +27,37 @@ html,
   text-decoration: underline;
   font-weight: 590;
 }
+
+.card {
+  background-color: rgb(223, 206, 206);
+  margin: 20px;
+  padding: 10px;
+}
+
+.cardHeader {
+  font-size: 30px;
+  margin: 10px;
+  color: rgb(124, 90, 90);
+}
+
+.album {
+  font-size: 20px;
+  font-style: italic;
+  margin: 10px;
+  margin-left: 30px;
+  color: rgb(90, 69, 69);
+}
+
+.img {
+  height: 200px;
+  margin: 10px;
+}
+
+.artist,
+.length {
+  color: rgb(146, 69, 69);
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+
