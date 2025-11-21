@@ -60,13 +60,6 @@ const songs = [
         length: "4:37",
         image: "",
     },
-    {
-        name: "Castle in the Sky",
-        artist: "Joe Hisaishi",
-        album: "Laputa: Castle in the Sky",
-        length: "3:55",
-        image: "",
-    },
 
     // My Neighbor Totoro
     {
