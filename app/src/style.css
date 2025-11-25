@@ -8,8 +8,17 @@ html,
   scroll-behavior: smooth;
 } 
 
+@media screen and (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+  }
+}
+
 #viewBtn,
-#addPlaylist,
+#createPlaylist,
 #addSong {
   font-size: 20px;
   color: rgb(136, 69, 69);
@@ -22,22 +31,33 @@ html,
 }
 
 #viewBtn:hover,
-#addPlaylist:hover,
+#createPlaylist:hover,
 #addSong:hover {
   text-decoration: underline;
   font-weight: 590;
+}
+
+.hidden {
+  display: none;
 }
 
 .card {
   background-color: rgb(223, 206, 206);
   margin: 20px;
   padding: 10px;
+  margin-right: 800px;
 }
 
 .cardHeader {
   font-size: 30px;
   margin: 10px;
+  display: inline-block;
   color: rgb(124, 90, 90);
+}
+
+.cardHeader:hover {
+  text-decoration: underline;
+  font-weight: 100000;
 }
 
 .album {

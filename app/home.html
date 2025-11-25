@@ -1,17 +1,23 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Making a Playlist</title>
-    <link rel="stylesheet" href="src/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
     <button id="viewBtn">View All Songs</button>
-    <button id="addPlaylist">Create a Playlist</button>
+    <button id="createPlaylist">Create a Playlist</button>
     <button id="addSong">Add a Song</button>
-    <section class="container">
 
+    <section class="form hidden">
+      <form action="" method="get" class="form">
+        <label for="name">Enter playlist name: </label>
+        <input type="text" name="name" id="name" required />
+      </form>
     </section>
+    
+    <section class="container"></section>
     <script src="src/app.js"></script>
-</body>
+  </body>
 </html>
