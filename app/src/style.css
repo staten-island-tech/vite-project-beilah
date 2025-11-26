@@ -41,6 +41,16 @@ html,
   display: none;
 }
 
+.form * {
+  font-size: 20px;
+  margin: 10px;
+  color: rgb(124, 90, 90);
+}
+
+.form input {
+  padding: 10px 15px;
+}
+
 .card {
   background-color: rgb(223, 206, 206);
   margin: 20px;

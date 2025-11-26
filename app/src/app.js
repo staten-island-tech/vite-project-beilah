@@ -125,13 +125,15 @@ createPlaylist.addEventListener("click", function () {
   container.innerHTML = "";
   const form = document.querySelector(".form");
   form.classList.remove("hidden");
+  const submitBtn = document.querySelector(".submitBtn");
+  submitBtn.classList.remove("hidden");
 })
 
 
+document.querySelector("")
 
 
-
-
+// WHEN U COME BACK SELECT THE SUBMIT BTN, LOG ALL THE INFO FROM THE FORM 
 
 const all = document.querySelector("#viewBtn");
 

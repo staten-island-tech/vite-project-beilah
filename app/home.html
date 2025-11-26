@@ -11,12 +11,22 @@
     <button id="addSong">Add a Song</button>
 
     <section class="form hidden">
-      <form action="" method="get" class="form">
-        <label for="name">Enter playlist name: </label>
-        <input type="text" name="name" id="name" required />
-      </form>
+      <div class="playlistName">
+        <form action="" method="get">
+          <label class="label" for="name">Playlist Name: </label>
+          <input type="text" name="name" id="name" required />
+        </form>
+      </div>
+      <div class="playlistDesc">
+        <form action="" method="get">
+          <label class="label" for="name">Playlist Description: </label>
+          <input type="text" name="name" id="name" required />
+        </form>
+      </div>
     </section>
-    
+
+    <button class="submitBtn hidden">Submit</button>
+
     <section class="container"></section>
     <script src="src/app.js"></script>
   </body>
