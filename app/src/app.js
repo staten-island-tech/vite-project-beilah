@@ -130,10 +130,31 @@ createPlaylist.addEventListener("click", function () {
 })
 
 
-document.querySelector("")
+const submitBtn = document.querySelector(".submitBtn");
 
+submitBtn.addEventListener("click", function () {
+  const nameInput = document.querySelector("#playlistName");
+  const descInput = document.querySelector("#playlistDesc");
 
-// WHEN U COME BACK SELECT THE SUBMIT BTN, LOG ALL THE INFO FROM THE FORM 
+  const playlistName = nameInput.value;
+  const playlistDesc = descInput.value;
+
+  // Log the info
+  console.log("Playlist Name:", playlistName);
+  console.log("Playlist Description:", playlistDesc);
+
+  // Create empty playlist object
+  const playlist = {
+    name: playlistName,
+    description: playlistDesc,
+    songs: [] // empty playlist for now
+  };
+
+  console.log("Created Playlist:", playlist);
+
+  // OPTIONAL: hide the form after creating
+  document.querySelector(".form").classList.add("hidden");
+});
 
 const all = document.querySelector("#viewBtn");
 
