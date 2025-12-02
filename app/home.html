@@ -6,24 +6,25 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <button id="viewBtn">View All Songs</button>
-    <button id="createPlaylist">Create a Playlist</button>
-    <button id="addSong">Add a Song</button>
-
-<section class="form hidden">
-  <form id="playlistForm">
-    <div class="playlistName">
-      <label class="label" for="playlistName">Playlist Name:</label>
-      <input type="text" id="playlistName" required />
+    <div class="btns">
+      <button id="viewBtn">View All Songs</button>
+      <button id="createPlaylist">Create a Playlist</button>
+      <button id="addSong">Add a Song</button>
     </div>
 
-    <div class="playlistDesc">
-      <label class="label" for="playlistDesc">Playlist Description:</label>
-      <input type="text" id="playlistDesc" required />
-    </div>
-  </form>
-</section>
+    <section class="form hidden">
+      <form id="playlistForm">
+        <div class="playlistName">
+          <label class="label" for="playlistName">Playlist Name:</label>
+          <input type="text" id="playlistName" required />
+        </div>
 
+        <div class="playlistDesc">
+          <label class="label" for="playlistDesc">Playlist Description:</label>
+          <input type="text" id="playlistDesc" required />
+        </div>
+      </form>
+    </section>
 
     <button class="submitBtn hidden">Submit</button>
 

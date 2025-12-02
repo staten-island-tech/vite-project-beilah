@@ -6,7 +6,7 @@ html,
   font-size: 10px;
   box-sizing: border-box;
   scroll-behavior: smooth;
-} 
+}
 
 @media screen and (max-width: 1200px) {
   .container {
@@ -22,12 +22,30 @@ html,
 #addSong {
   font-size: 20px;
   color: rgb(136, 69, 69);
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-style: italic;
-  background-color:rgb(235, 235, 235);
+  background-color: rgb(235, 235, 235);
   border-color: transparent;
   margin: 20px;
   padding: 10px;
+}
+
+.playlist,
+.submitBtn {
+  font-size: 20px;
+  color: rgb(235, 235, 235);
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  background-color: rgb(136, 69, 69);
+  border-color: transparent;
+  margin: 20px;
+  padding: 10px;
+}
+
+.playlist:hover,
+.submitBtn:hover {
+  text-decoration: underline;
+  font-weight: 590;
 }
 
 #viewBtn:hover,
@@ -89,5 +107,3 @@ html,
   font-size: 18px;
   margin-left: 10px;
 }
-
-
