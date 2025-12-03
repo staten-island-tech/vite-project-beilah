@@ -1,3 +1,14 @@
+let allPlaylists = [];
+
+// Create empty playlist object
+const playlist = {
+  name: playlistName,
+  description: playlistDesc,
+  songs: [], // empty playl ist for now
+};
+
+allPlaylists.push(playlist);
+
 const songs = [
   // Howl's Moving Castle
   {
@@ -115,6 +126,12 @@ songs.forEach((song) => {
             <img src="${song.image}" class="img"/>
             <h3 class="artist">${song.artist}</h3>
             <h5 class="length">${song.length}</h5>
+
+            <select class="playlistSelect">
+              <option disabled selected>Add To Playlist</option>
+              <option disabled selected>${playlist.name}}</option>
+            </select>
+
         </div>
         `;
   container.innerHTML += html;
@@ -129,6 +146,9 @@ createPlaylist.addEventListener("click", function () {
   submitBtn.classList.remove("hidden");
 });
 
+/* const addToPlaylist = document.querySelector(".addToPlaylist");
+addToPlaylist.addEventListener("click", function () {}); */
+
 const submitBtn = document.querySelector(".submitBtn");
 
 submitBtn.addEventListener("click", function () {
@@ -142,13 +162,6 @@ submitBtn.addEventListener("click", function () {
   console.log("Playlist Name:", playlistName);
   console.log("Playlist Description:", playlistDesc);
 
-  // Create empty playlist object
-  const playlist = {
-    name: playlistName,
-    description: playlistDesc,
-    songs: [], // empty playl ist for now
-  };
-
   console.log("Created Playlist:", playlist);
 
   const btnDiv = document.querySelector(".btns");
@@ -158,31 +171,27 @@ submitBtn.addEventListener("click", function () {
     `<button class="playlist">${nameInput.value}</button>`
   );
 
-  const playlistBtn = btnDiv.querySelector(".playlist:last-child")
+  const playlistBtn = btnDiv.querySelector(".playlist:last-child");
 
   playlistBtn.addEventListener("click", function () {
     container.innerHTML = "";
     console.log("Playlist clicked:", playlist.name);
     document.querySelector(".form").classList.add("hidden");
     document.querySelector(".submitBtn").classList.add("hidden");
-  })
-
-  if (playlist.songs.length === 0) {
-    container.innerHTML = `
+    if (playlist.songs.length === 0) {
+      container.innerHTML = `
       <div class="emptyMsg">
         <h2>Your playlist is empty</h2>
         <p>Add songs to get started!</p>
       </div>
     `;
-    return;
-  }
+      return;
+    }
+  });
 
   nameInput.value = "";
   descInput.value = "";
 });
-
-
-
 
 const all = document.querySelector("#viewBtn");
 
@@ -197,6 +206,11 @@ all.addEventListener("click", function () {
               <img src="${song.image}" class="img"/>
               <h3 class="artist">${song.artist}</h3>
               <h5 class="length">${song.length}</h5>
+
+              <select class="playlistSelect">
+              <option disabled selected>Add To Playlist</option>
+              <option disabled selected>${playlist.name}}</option>
+            </select>
           </div>
           `;
     container.innerHTML += html;
