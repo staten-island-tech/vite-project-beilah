@@ -1,14 +1,5 @@
 let allPlaylists = [];
 
-// Create empty playlist object
-const playlist = {
-  name: playlistName,
-  description: playlistDesc,
-  songs: [], // empty playl ist for now
-};
-
-allPlaylists.push(playlist);
-
 const songs = [
   // Howl's Moving Castle
   {
@@ -129,7 +120,7 @@ songs.forEach((song) => {
 
             <select class="playlistSelect">
               <option disabled selected>Add To Playlist</option>
-              <option disabled selected>${playlist.name}}</option>
+              <option disabled selected>Create a playlist to get started</option>
             </select>
 
         </div>
@@ -146,17 +137,22 @@ createPlaylist.addEventListener("click", function () {
   submitBtn.classList.remove("hidden");
 });
 
-/* const addToPlaylist = document.querySelector(".addToPlaylist");
-addToPlaylist.addEventListener("click", function () {}); */
-
 const submitBtn = document.querySelector(".submitBtn");
-
 submitBtn.addEventListener("click", function () {
   const nameInput = document.querySelector("#playlistName");
   const descInput = document.querySelector("#playlistDesc");
 
   const playlistName = nameInput.value;
   const playlistDesc = descInput.value;
+
+  // Create empty playlist object
+  const playlist = {
+    name: playlistName,
+    description: playlistDesc,
+    songs: [], // empty playl ist for now
+  };
+
+  allPlaylists.push(playlist);
 
   // Log the info
   console.log("Playlist Name:", playlistName);
@@ -193,8 +189,18 @@ submitBtn.addEventListener("click", function () {
   descInput.value = "";
 });
 
-const all = document.querySelector("#viewBtn");
+function activatePlaylistSelects() {
+  const selects = document.querySelectorAll(".playlistSelect");
 
+  selects.forEach((select) => {
+    select.addEventListener("change", function () {
+    console.log("haliey sucks");
+    playlist['song'].push(songs);
+    })
+  })
+}
+
+const all = document.querySelector("#viewBtn");
 all.addEventListener("click", function () {
   container.innerHTML = "";
 
@@ -208,19 +214,21 @@ all.addEventListener("click", function () {
               <h5 class="length">${song.length}</h5>
 
               <select class="playlistSelect">
-              <option disabled selected>Add To Playlist</option>
-              <option disabled selected>${playlist.name}}</option>
-            </select>
+                <option disabled selected>Add To Playlist</option>
+                ${allPlaylists.map((p) => `<option>${p.name}</option>`).join("")}
+              </select>
+
           </div>
           `;
     container.innerHTML += html;
     document.querySelector(".form").classList.add("hidden");
     document.querySelector(".submitBtn").classList.add("hidden");
   });
+
+  activatePlaylistSelects();
 });
 
 const addSong = document.querySelector("#addSong");
-
 addSong.addEventListener("click", function () {
   container.innerHTML = "";
 

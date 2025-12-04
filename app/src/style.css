@@ -42,6 +42,24 @@ html,
   padding: 10px;
 }
 
+.emptyMsg * {
+  font-size: 20px;
+  margin: 10px;
+  display: inline-block;
+  color: rgb(124, 90, 90);
+}
+
+.playlistSelect {
+  font-size: 20px;
+  color: rgb(235, 235, 235);
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  background-color: rgb(136, 69, 69);
+  border-color: transparent;
+  margin: 20px;
+  padding: 10px;
+}
+
 .playlist:hover,
 .submitBtn:hover {
   text-decoration: underline;
