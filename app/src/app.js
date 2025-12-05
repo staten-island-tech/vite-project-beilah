@@ -135,6 +135,7 @@ createPlaylist.addEventListener("click", function () {
   form.classList.remove("hidden");
   const submitBtn = document.querySelector(".submitBtn");
   submitBtn.classList.remove("hidden");
+  document.querySelector(".addSong").classList.add("hidden");
 });
 
 const submitBtn = document.querySelector(".submitBtn");
@@ -183,6 +184,18 @@ submitBtn.addEventListener("click", function () {
     `;
       return;
     }
+    playlist.songs.forEach((song) => {
+      const html = `
+        <div class="card" data-name='${song.name}' >
+            <h2 class="cardHeader">${song.name}</h2>\
+            <h4 class="album">${song.album}</h4>
+            <img src="${song.image}" class="img"/>
+            <h3 class="artist">${song.artist}</h3>
+            <h5 class="length">${song.length}</h5>
+        </div>
+        `;
+      container.innerHTML += html;
+    });
   });
 
   nameInput.value = "";
@@ -194,10 +207,24 @@ function activatePlaylistSelects() {
 
   selects.forEach((select) => {
     select.addEventListener("change", function () {
-    console.log("haliey sucks");
-    playlist['song'].push(songs);
-    })
-  })
+
+      const playlistName = select.value;
+      const playlist = allPlaylists.find(p => p.name === playlistName);
+
+      const card = select.closest(".card");
+      const songName = card.dataset.name;
+
+      const song = songs.find(s => s.name === songName);
+
+      console.log(select.value);
+      allPlaylists.forEach((playlist) => {
+        if (select.value === playlist.name) {
+          playlist.songs.push(song);
+          console.log("pushed song");
+        }
+      });
+    });
+  });
 }
 
 const all = document.querySelector("#viewBtn");
@@ -215,7 +242,9 @@ all.addEventListener("click", function () {
 
               <select class="playlistSelect">
                 <option disabled selected>Add To Playlist</option>
-                ${allPlaylists.map((p) => `<option>${p.name}</option>`).join("")}
+                ${allPlaylists
+                  .map((p) => `<option>${p.name}</option>`)
+                  .join("")}
               </select>
 
           </div>
@@ -223,6 +252,7 @@ all.addEventListener("click", function () {
     container.innerHTML += html;
     document.querySelector(".form").classList.add("hidden");
     document.querySelector(".submitBtn").classList.add("hidden");
+    document.querySelector(".addSong").classList.add("hidden");
   });
 
   activatePlaylistSelects();
@@ -231,11 +261,9 @@ all.addEventListener("click", function () {
 const addSong = document.querySelector("#addSong");
 addSong.addEventListener("click", function () {
   container.innerHTML = "";
+  const songForm = document.querySelector(".addSong");
+  songForm.classList.remove("hidden");
 
-  const html = `
-            <h1>under constuction</h1>
-          `;
-  container.innerHTML += html;
   document.querySelector(".form").classList.add("hidden");
   document.querySelector(".submitBtn").classList.add("hidden");
 });
