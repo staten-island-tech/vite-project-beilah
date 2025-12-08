@@ -1,6 +1,6 @@
 let allPlaylists = [];
 
-const songs = [
+let songs = [
   // Howl's Moving Castle
   {
     name: "Merry-Go-Round of Life",
@@ -138,6 +138,52 @@ createPlaylist.addEventListener("click", function () {
   document.querySelector(".addSong").classList.add("hidden");
 });
 
+const songSubmit = document.querySelector(".songSubmit");
+songSubmit.addEventListener("click", function () {
+  const songNameInput = document.querySelector("#songName");
+  const albumInput = document.querySelector("#songAlbum");
+  const imageInput = document.querySelector("#songImage");
+  const artistInput = document.querySelector("#songArtist");
+  const lengthInput = document.querySelector("#songLength");
+
+  const songName = songNameInput.value;
+  const songAlbum = albumInput.value;
+  const songArtist = artistInput.value;
+  const songLength = lengthInput.value;
+
+  const file = imageInput.files[0];
+  const imageURL = URL.createObjectURL(file);
+
+  const song = {
+    name: songName,
+    album: songAlbum,
+    image: imageURL,
+    artist: songArtist,
+    length: songLength,
+  };
+
+  songs.unshift(song);
+
+  console.log("Song Name:", songName);
+  console.log("Song Album:", songAlbum);
+  console.log("Song Artist:", songArtist);
+  console.log("Song Length:", songLength);
+
+  console.log("Created Song:", song);
+
+  songNameInput.value = "";
+  albumInput.value = "";
+  artistInput.value = "";
+  lengthInput.value = "";
+  imageInput.value = "";
+
+  document.querySelector(".songName").classList.add("hidden");
+  document.querySelector(".songAlbum").classList.add("hidden");
+  document.querySelector(".songImage").classList.add("hidden");
+  document.querySelector(".songArtist").classList.add("hidden");
+  document.querySelector(".songLength").classList.add("hidden");
+});
+
 const submitBtn = document.querySelector(".submitBtn");
 submitBtn.addEventListener("click", function () {
   const nameInput = document.querySelector("#playlistName");
@@ -207,14 +253,13 @@ function activatePlaylistSelects() {
 
   selects.forEach((select) => {
     select.addEventListener("change", function () {
-
       const playlistName = select.value;
-      const playlist = allPlaylists.find(p => p.name === playlistName);
+      const playlist = allPlaylists.find((p) => p.name === playlistName);
 
       const card = select.closest(".card");
       const songName = card.dataset.name;
 
-      const song = songs.find(s => s.name === songName);
+      const song = songs.find((s) => s.name === songName);
 
       console.log(select.value);
       allPlaylists.forEach((playlist) => {
@@ -242,10 +287,13 @@ all.addEventListener("click", function () {
 
               <select class="playlistSelect">
                 <option disabled selected>Add To Playlist</option>
-                ${allPlaylists
-                  .map((p) => `<option>${p.name}</option>`)
-                  .join("")}
-              </select>
+                ${
+                  allPlaylists.length === 0
+                    ? `<option disabled selected>Create a playlist to get started</option>`
+                    : allPlaylists
+                        .map((p) => `<option>${p.name}</option>`)
+                        .join("")
+                }
 
           </div>
           `;

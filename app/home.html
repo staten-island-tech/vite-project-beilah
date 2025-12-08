@@ -35,19 +35,25 @@
 
         <div class="songAlbum">
           <label for="songAlbum" class="label">Album:</label>
-          <input type="text" id="playlistDesc" required />
+          <input type="text" id="songAlbum" required />
+        </div>
+
+        <div class="songImage">
+          <label for="songImage" class="label">Image (Paste):</label>
+          <input type="file" id="songImage" accept="image/*" required />
         </div>
 
         <div class="songArtist">
           <label for="songArtist" class="label">Artist:</label>
-          <input type="text" id="playlistDesc" required />
+          <input type="text" id="songArtist" required />
         </div>
 
         <div class="songLength">
           <label for="songLength" class="label">Length:</label>
-          <input type="text" id="playlistDesc" required />
+          <input type="text" id="songLength" required />
         </div>
       </form>
+      <button class="songSubmit">Submit</button>
     </section>
 
     <button class="submitBtn hidden">Submit</button>
