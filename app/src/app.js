@@ -216,33 +216,47 @@ submitBtn.addEventListener("click", function () {
 
   const playlistBtn = btnDiv.querySelector(".playlist:last-child");
 
-  playlistBtn.addEventListener("click", function () {
-    container.innerHTML = "";
-    console.log("Playlist clicked:", playlist.name);
-    document.querySelector(".form").classList.add("hidden");
-    document.querySelector(".submitBtn").classList.add("hidden");
-    if (playlist.songs.length === 0) {
-      container.innerHTML = `
+playlistBtn.addEventListener("click", function () {
+  container.innerHTML = "";
+
+  // Hide forms
+  document.querySelector(".form").classList.add("hidden");
+  document.querySelector(".submitBtn").classList.add("hidden");
+
+  // ⭐ Display playlist name & description
+  container.innerHTML = `
+    <div class="playlistHeader">
+      <h1>${playlist.name}</h1>
+      <p>${playlist.description}</p>
+    </div>
+  `;
+
+  // If no songs yet
+  if (playlist.songs.length === 0) {
+    container.innerHTML += `
       <div class="emptyMsg">
         <h2>Your playlist is empty</h2>
         <p>Add songs to get started!</p>
       </div>
     `;
-      return;
-    }
-    playlist.songs.forEach((song) => {
-      const html = `
-        <div class="card" data-name='${song.name}' >
-            <h2 class="cardHeader">${song.name}</h2>\
-            <h4 class="album">${song.album}</h4>
-            <img src="${song.image}" class="img"/>
-            <h3 class="artist">${song.artist}</h3>
-            <h5 class="length">${song.length}</h5>
-        </div>
-        `;
-      container.innerHTML += html;
-    });
+    return;
+  }
+
+  // ⭐ Display songs in the playlist
+  playlist.songs.forEach((song) => {
+    const html = `
+      <div class="card" data-name='${song.name}' >
+          <h2 class="cardHeader">${song.name}</h2>
+          <h4 class="album">${song.album}</h4>
+          <img src="${song.image}" class="img"/>
+          <h3 class="artist">${song.artist}</h3>
+          <h5 class="length">${song.length}</h5>
+      </div>
+    `;
+    container.innerHTML += html;
   });
+});
+
 
   nameInput.value = "";
   descInput.value = "";
