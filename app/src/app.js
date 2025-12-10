@@ -1,3 +1,5 @@
+import './style.css'
+
 let allPlaylists = [];
 
 let songs = [
@@ -176,12 +178,6 @@ songSubmit.addEventListener("click", function () {
   artistInput.value = "";
   lengthInput.value = "";
   imageInput.value = "";
-
-  document.querySelector(".songName").classList.add("hidden");
-  document.querySelector(".songAlbum").classList.add("hidden");
-  document.querySelector(".songImage").classList.add("hidden");
-  document.querySelector(".songArtist").classList.add("hidden");
-  document.querySelector(".songLength").classList.add("hidden");
 });
 
 const submitBtn = document.querySelector(".submitBtn");
@@ -329,3 +325,8 @@ addSong.addEventListener("click", function () {
   document.querySelector(".form").classList.add("hidden");
   document.querySelector(".submitBtn").classList.add("hidden");
 });
+
+const modeswitch = document.querySelector("#themeToggle");
+modeswitch.addEventListener("change", () => {
+  document.body.classList.toggle("dark", modeswitch.checked);
+})

@@ -8,16 +8,18 @@ html,
   scroll-behavior: smooth;
 }
 
+/* ✨ Updated Modern Color Palette */
 :root {
-  --primary-color: #7e4a4a;
-  --second-color: #f8f2f2;
-  --third-color: #ddcccc;
+  --primary-color: #795f5f;   /* Charcoal text */
+  --second-color: #f7f3f5;    /* Soft rose-tinted white */
+  --third-color: #dfcccc;     /* Pale mauve accent */
 }
 
+/* ✨ Updated Dark Mode Palette */
 .dark {
-  --primary-color: #f8f2f2;
-  --second-color: #ddcccc;
-  --third-color: #7e4a4a;
+  --primary-color: #dbcece;   /* Soft white text */
+  --second-color: #af8686;    /* Muted mauve-gray */
+  --third-color: #644848;     /* Deep charcoal background */
 }
 
 /* Media Section */
@@ -28,6 +30,19 @@ html,
   .card {
     width: 100%;
   }
+}
+
+#themeToggle,
+.themeLabel {
+  font-size: 20px;
+  color: var(--second-color);
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  background-color: var(--primary-color);
+  border-color: transparent;
+  margin: 20px;
+  margin-top: 35px;
+  padding: 10px;
 }
 
 /* Light Buttons */
