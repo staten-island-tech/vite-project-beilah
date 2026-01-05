@@ -138,6 +138,7 @@ createPlaylist.addEventListener("click", function () {
   const submitBtn = document.querySelector(".submitBtn");
   submitBtn.classList.remove("hidden");
   document.querySelector(".addSong").classList.add("hidden");
+  
 });
 
 const songSubmit = document.querySelector(".songSubmit");
@@ -218,6 +219,8 @@ playlistBtn.addEventListener("click", function () {
   // Hide forms
   document.querySelector(".form").classList.add("hidden");
   document.querySelector(".submitBtn").classList.add("hidden");
+  document.querySelector(".addSong").classList.add("hidden");
+
 
   // ⭐ Display playlist name & description
   container.innerHTML = `
