@@ -222,7 +222,7 @@ playlistBtn.addEventListener("click", function () {
   document.querySelector(".addSong").classList.add("hidden");
 
 
-  // ⭐ Display playlist name & description
+  // Display playlist name & description
   container.innerHTML = `
     <div class="playlistHeader">
       <h1>${playlist.name}</h1>
@@ -241,7 +241,7 @@ playlistBtn.addEventListener("click", function () {
     return;
   }
 
-  // ⭐ Display songs in the playlist
+  // display songs in the playlist
   playlist.songs.forEach((song) => {
     const html = `
       <div class="card" data-name='${song.name}' >
